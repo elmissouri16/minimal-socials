@@ -1,0 +1,33 @@
+{
+  "name": "Minimal Sm",
+  "version": "1",
+  "manifest_version": 3,
+  "description": "extention to remove  some annoying things from social websites",
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/",
+    "https://www.instagram.com/"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "src/content.js"
+      ]
+    }
+  ],
+  "action": {},
+  "background": {
+    "service_worker": "background.js"
+  }
+}
