@@ -10,7 +10,9 @@
   },
   "permissions": [
     "activeTab",
-    "scripting"
+    "webNavigation",
+    "scripting",
+    "storage"
   ],
   "host_permissions": [
     "https://www.youtube.com/",
@@ -22,11 +24,15 @@
         "<all_urls>"
       ],
       "js": [
-        "src/content.js"
+        "src/content.js",
+        "src/helpers.js",
+        "src/popup.js"
       ]
     }
   ],
-  "action": {},
+  "action": {
+    "default_popup": "popup.html"
+  },
   "background": {
     "service_worker": "background.js"
   }
